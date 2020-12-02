@@ -1,0 +1,58 @@
+<img src="../../assets/bg1.jpg" alt="">
+<div class="form-container">
+    <p class="form-title">Zarezerwuj sesję</p>
+    <hr>
+    <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+        <!-- <label for="photographer">Wybierz fotografa:</label> -->
+        <select 
+        name="photographer" 
+        id="photographer"
+        formControlName="photographer">
+            <option value="" selected disabled hidden>Wybierz fotografa</option>
+            <option value="Marek Marucha">Marek Marucha</option>
+            <option value="Jurek Kiler">Jurek Kiler</option>
+        </select>
+        <span
+        *ngIf="!reservationForm.get('photographer').valid && reservationForm.get('photographer').touched"
+        class="error-text">Proszę wybrać fotografa</span>
+
+        <!-- <label for="date">Wybierz datę:</label> -->
+        <input 
+        type="date" 
+        id="date"
+        formControlName="date">
+        <span
+        *ngIf="!reservationForm.get('date').valid && reservationForm.get('date').touched"
+        class="error-text">Proszę wybrać poprawną datę</span>
+
+        <!-- <label for="subject">Określ tematykę:</label> -->
+        <input 
+        type="text" 
+        id="subject" 
+        formControlName="subject"
+        placeholder="Określ tematykę">
+        <span
+        *ngIf="!reservationForm.get('subject').valid && reservationForm.get('subject').touched"
+        class="error-text">Proszę wpisać poprawną tematykę</span>
+
+        <!-- <label for="place">Określ miejsce sesji:</label> -->
+        <input 
+        type="text" 
+        id="place" 
+        formControlName="place"
+        placeholder="Określ miejsce sesji">
+        <span
+        *ngIf="!reservationForm.get('place').valid && reservationForm.get('place').touched"
+        class="error-text">Proszę wpisać poprawne miejsce</span>
+        
+        <span
+        *ngIf="!reservationForm.valid && reservationForm.touched" 
+        class="error-text">Formularz zawiera błędy</span>
+
+        <div class="buttons-wrapper">
+            <input type="submit" [disabled]="!reservationForm.valid">
+            <input type="reset" routerLink="/main" value="Anuluj">
+        </div>
+        
+    </form>
+</div>

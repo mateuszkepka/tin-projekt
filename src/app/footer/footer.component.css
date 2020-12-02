@@ -1,0 +1,16 @@
+:host {
+    position: relative;
+    /* bottom: 0;
+    left: 0; */
+    text-align: center;
+    width: 100vw;
+    height: 7vh;
+    background: #424242;
+    color: white;
+}
+
+p {
+    display: block;
+    margin: auto;
+    line-height: 7vh;
+}
