@@ -3,7 +3,6 @@
     <p class="form-title">Zarezerwuj sesję</p>
     <hr>
     <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
-        <!-- <label for="photographer">Wybierz fotografa:</label> -->
         <select 
         name="photographer" 
         id="photographer"
@@ -15,8 +14,6 @@
         <span
         *ngIf="!reservationForm.get('photographer').valid && reservationForm.get('photographer').touched"
         class="error-text">Proszę wybrać fotografa</span>
-
-        <!-- <label for="date">Wybierz datę:</label> -->
         <input 
         type="date" 
         id="date"
@@ -25,7 +22,6 @@
         *ngIf="!reservationForm.get('date').valid && reservationForm.get('date').touched"
         class="error-text">Proszę wybrać poprawną datę</span>
 
-        <!-- <label for="subject">Określ tematykę:</label> -->
         <input 
         type="text" 
         id="subject" 
@@ -34,8 +30,6 @@
         <span
         *ngIf="!reservationForm.get('subject').valid && reservationForm.get('subject').touched"
         class="error-text">Proszę wpisać poprawną tematykę</span>
-
-        <!-- <label for="place">Określ miejsce sesji:</label> -->
         <input 
         type="text" 
         id="place" 

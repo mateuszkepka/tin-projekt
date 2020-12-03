@@ -1,0 +1,43 @@
+<div class="form-container">
+    <p class="form-title">Zarejestruj się</p>
+    <hr>
+    <form [formGroup]="signinForm">
+        <input 
+            type="text" 
+            placeholder="E-mail"
+            formControlName="email">
+        <span
+            class="error-text"
+            *ngIf="!signinForm.get('email').valid && signinForm.get('email').touched">
+            Proszę wprowadzić poprawny adres E-mail!</span>
+        <input 
+            type="password"
+            placeholder="Password"
+            formControlName="password">
+        <span
+            class="error-text"
+            *ngIf="!signinForm.get('password').valid && signinForm.get('password').touched">
+            Proszę wprowadzić hasło!</span>
+        <input 
+            type="password"
+            placeholder="Powtórz hasło"
+            formControlName="passwordRepeat">
+        <span
+            class="error-text"
+            *ngIf="(signinForm.get('passwordRepeat').value !== signinForm.get('password').value) && signinForm.get('passwordRepeat').touched">
+            Podane hasła są różne!</span>
+        <div class="buttons-wrapper">
+        <input 
+            type="submit" 
+            value="Zarejestruj się">
+        <input 
+            type="reset" 
+            value="Anuluj"
+            routerLink="/">
+        </div>
+        <span
+            class="error-text"
+            *ngIf="!signinForm.valid && signinForm.touched">
+            Formularz zawiera błędy!</span>
+    </form>
+</div>

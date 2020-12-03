@@ -4,7 +4,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-reservation',
   templateUrl: './reservation.component.html',
-  styleUrls: ['./reservation.component.css']
+  styleUrls: [
+    './reservation.component.css',
+    '../../shared/forms.css']
 })
 export class ReservationComponent implements OnInit {
   reservationForm: FormGroup;

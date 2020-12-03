@@ -1,0 +1,32 @@
+<div class="form-container">
+    <p class="form-title">Zaloguj się</p>
+    <hr>
+    <form [formGroup]='loginForm'>
+        <input 
+            type="text" 
+            placeholder="E-mail"
+            formControlName="email">
+        <span 
+            class="error-text"
+            *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">
+            Proszę wprowadzić prawidłowy email!</span>
+        <input 
+            type="password" 
+            placeholder="Password"
+            formControlName="password">
+        <span 
+            class="error-text"
+            *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+            Proszę wprowadzić hasło!</span>
+        <input 
+            type="submit" 
+            value="Zaloguj się">
+        <span
+            class="error-text"
+            *ngIf="!loginForm.valid && loginForm.touched">
+            Formularz zawiera błędy!</span>
+
+    <p class="under-form">Nie masz konta? <a routerLink="/signin">Załóż konto</a></p>
+    </form>
+</div>
+

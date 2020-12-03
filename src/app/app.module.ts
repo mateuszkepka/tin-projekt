@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { OurStudioComponent } from './our-studio/our-studio.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { ToolsComponent } from './tools/tools.component';
-import { ClientsComponent } from './clients/clients-component/clients-component.component';
+import { ClientsComponent } from './clients/clients/clients.component';
 import { ClientDetailsComponent } from './clients/client-details/client-details/client-details.component';
 import { ClientAddComponent } from './clients/client-add/client-add/client-add.component';
 import { ClientEditComponent } from './clients/client-edit/client-edit.component';
@@ -22,6 +22,8 @@ import { SessionsComponent } from './sessions/sessions/sessions.component';
 import { SessionsAddComponent } from './sessions/sessions-add/sessions-add.component';
 import { SessionsDetailsComponent } from './sessions/sessions-details/sessions-details.component';
 import { SessionsEditComponent } from './sessions/sessions-edit/sessions-edit.component';
+import { LoginComponent } from './login/login/login.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { SessionsEditComponent } from './sessions/sessions-edit/sessions-edit.co
     SessionsComponent,
     SessionsAddComponent,
     SessionsDetailsComponent,
-    SessionsEditComponent
+    SessionsEditComponent,
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

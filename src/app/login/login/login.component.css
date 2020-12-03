@@ -1,0 +1,26 @@
+:host {
+    width: 100vw;
+    height: 85vh;
+    text-align: center;
+}
+
+input[type="submit"]{
+    align-self: center;
+    width: 20rem;
+}
+
+input[type="submit"]:hover:not([disabled]),
+input[type="submit"]:active:not([disabled]) {
+    box-shadow: inset 20rem 0 0 0  rgba(46, 213, 115,1.0);
+}
+
+.under-form {
+    color: white;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.under-form a {
+    color: #60a3bc
+}
