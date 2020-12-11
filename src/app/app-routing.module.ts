@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 import { ClientAddComponent } from './clients/client-add/client-add/client-add.component';
 import { ClientDetailsComponent } from './clients/client-details/client-details/client-details.component';
 import { ClientEditComponent } from './clients/client-edit/client-edit.component';
@@ -13,25 +13,27 @@ import { SigninComponent } from './signin/signin.component';
 import { ToolsComponent } from './tools/tools.component';
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: '/main', pathMatch: 'full' },
-    { path: 'main', component: MainPageComponent },
-    { path: 'ourStudio', component: OurStudioComponent },
-    { path: 'reservation', component: ReservationComponent },
-    { path: 'tools', component: ToolsComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'signin', component: SigninComponent },
-    { path: 'clients', component: ClientsComponent, children: [
-        { path: 'add', component: ClientAddComponent },
-        { path: 'details/:id', component: ClientDetailsComponent },
-        { path: 'edit/:id', component: ClientEditComponent }
-    ]}
-]
+  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: 'main', component: MainPageComponent },
+  { path: 'ourStudio', component: OurStudioComponent },
+  { path: 'reservation', component: ReservationComponent },
+  { path: 'tools', component: ToolsComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signin', component: SigninComponent },
+  {
+    path: 'clients',
+    component: ClientsComponent,
+    children: [
+      { path: 'add', component: ClientAddComponent },
+      { path: 'details/:id', component: ClientDetailsComponent },
+      { path: 'edit/:id', component: ClientEditComponent },
+    ],
+  },
+  { path: '**', component: MainPageComponent },
+];
 
 @NgModule({
-    imports: [RouterModule.forRoot(appRoutes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(appRoutes)],
+  exports: [RouterModule],
 })
-
-export class AppRoutingModule {
-
-}
+export class AppRoutingModule {}

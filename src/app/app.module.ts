@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -24,6 +25,7 @@ import { SessionsDetailsComponent } from './sessions/sessions-details/sessions-d
 import { SessionsEditComponent } from './sessions/sessions-edit/sessions-edit.component';
 import { LoginComponent } from './login/login/login.component';
 import { SigninComponent } from './signin/signin.component';
+import { ClientsService } from './clients/clients.service';
 
 @NgModule({
   declarations: [
@@ -52,9 +54,12 @@ import { SigninComponent } from './signin/signin.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ClientsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
