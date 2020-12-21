@@ -1,2 +1,18 @@
-<p *ngFor="let client of clients">{{ client.firstName }}</p>
-<router-outlet></router-outlet>
+<h3 class="page-title">Klienci</h3>
+<div class="flex-container">
+    <div class="list-container">
+        <div *ngFor="let client of clients" class="list-item">
+            <p>{{ client.firstName }} {{ client.lastName }}</p>
+            <p>{{ client.email }}</p>
+            <p>{{ client.phoneNumber }}</p>
+            <p>{{ client.address }}</p>
+            <button (click)="onDetailsClick(client._id)">Szczegóły</button>
+        </div>
+    </div>
+    <div class="client">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<div class="flex-bottom">
+    <button class="add-button" (click)="onAddClient()">Dodaj klienta</button>
+</div>

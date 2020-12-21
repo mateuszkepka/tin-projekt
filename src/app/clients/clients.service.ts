@@ -28,7 +28,7 @@ export class ClientsService {
     return this.clients;
   }
 
-  getClient(index: number) {
+  getClient(index: number): Client {
     this.clientsDataService.getClientById(index).subscribe((client) => {
       let newClient = new Client(
         client.firstName,
@@ -40,6 +40,7 @@ export class ClientsService {
         client.createdAt,
         client.updatedAt
       );
+      console.log(newClient);
       return newClient;
     });
     return null;
